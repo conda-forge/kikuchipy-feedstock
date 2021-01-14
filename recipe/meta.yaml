@@ -21,9 +21,9 @@ requirements:
   run:
     - python >=3
     - dask
-    - hyperspy >=1.5.2
+    - hyperspy-base >=1.5.2
     - h5py
-    - matplotlib
+    - matplotlib-base
     - numpy >=1.17
     - scikit-image >=0.16,<0.17
     - scikit-learn
