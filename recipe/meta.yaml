@@ -19,27 +19,27 @@ requirements:
     - pip
     - python >=3,<3.9
   run:
-    - python >=3,3.9
+    - python >=3,<3.9
     - dask
     - diffsims >=0.4
     - hyperspy-base >=1.5.2
-    - h5py >=2.10
-    - matplotlib-base >=3.2
-    - numpy >=1.18
-    - numba >=0.48
+    - h5py
+    - matplotlib-base
+    - numpy
+    - numba
     - orix >=0.5
-    - pooch >=0.13
+    - pooch
     - psutil
-    - tqdm >=0.5.2
-    - scikit-image >=0.16
+    - tqdm
+    - scikit-image
     - scikit-learn
     - scipy
 
 test:
   requires:
-    - coverage >=5.0
-    - pytest >=5.3.2
-    - pytest-cov >=2.8.1
+    - coverage
+    - pytest
+    - pytest-cov
   imports:
     - kikuchipy
     - kikuchipy.crystallography
