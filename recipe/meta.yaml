@@ -1,5 +1,5 @@
 {% set name = "kikuchipy" %}
-{% set version = "0.2.2" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8fe9306b4d293e00f4bd56a6a2514b51f2b6ba247525980de742755f67012d34
+  sha256: 5245bb11fa7d086af412c15f6791316478f89154fc21f3654b923006e24231f3
 
 build:
   noarch: python
@@ -17,29 +17,44 @@ build:
 requirements:
   host:
     - pip
-    - python >=3
+    - python >=3,<3.9
   run:
-    - python >=3
+    - python >=3,<3.9
     - dask
-    - hyperspy >=1.5.2
+    - diffsims >=0.4
+    - hyperspy-base >=1.5.2
     - h5py
-    - matplotlib
-    - numpy >=1.17
-    - scikit-image >=0.16,<0.17
+    - matplotlib-base
+    - numpy
+    - numba
+    - orix >=0.5
+    - pooch
+    - psutil
+    - tqdm
+    - scikit-image
     - scikit-learn
     - scipy
 
 test:
   requires:
-    - pytest >=5.3.2
+    - coverage
+    - pytest
+    - pytest-cov
   imports:
     - kikuchipy
+    - kikuchipy.crystallography
+    - kikuchipy.data
+    - kikuchipy.detectors
+    - kikuchipy.draw
     - kikuchipy.filters
     - kikuchipy.generators
+    - kikuchipy.indexing
     - kikuchipy.io
     - kikuchipy.pattern
     - kikuchipy.pattern.chunk
+    - kikuchipy.projections
     - kikuchipy.signals
+    - kikuchipy.simulations
     - kikuchipy.release
   commands:
     - pytest --pyargs kikuchipy
@@ -52,7 +67,7 @@ about:
     kikuchipy is an open-source Python library for processing and analysis of
     electron backscatter diffraction (EBSD) patterns
   doc_url: https://kikuchipy.org
-  dev_url: https://github.com/kikuchipy/kikuchipy
+  dev_url: https://github.com/pyxem/kikuchipy
 
 extra:
   recipe-maintainers:
