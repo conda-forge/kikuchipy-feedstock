@@ -21,6 +21,7 @@ requirements:
   run:
     - python >=3,<3.9
     - dask
+    - diffpy.structure >=3
     - diffsims >=0.4
     - hyperspy-base >=1.5.2
     - h5py
