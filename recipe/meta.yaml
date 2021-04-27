@@ -20,7 +20,7 @@ requirements:
     - python >=3
   run:
     - python >=3
-    - dask <= 2021.4.0
+    - dask <=2021.4.0
     - diffpy.structure >=3
     - diffsims >=0.4
     - hyperspy-base >=1.5.2
