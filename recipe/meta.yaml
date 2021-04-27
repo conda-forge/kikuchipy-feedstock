@@ -1,5 +1,5 @@
 {% set name = "kikuchipy" %}
-{% set version = "0.3.2" %}
+{% set version = "0.3.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c0ee55a6b1e351ce6f2192140d62771d34a01c1c91ab2a49453e8d11b9b683ed
+  sha256: 6efb558da84b93074eb229a9e58c25568d03137a94de6bc62cdbc17750901040
 
 build:
   noarch: python
@@ -17,10 +17,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3,<3.9
+    - python >=3
   run:
-    - python >=3,<3.9
-    - dask
+    - python >=3
+    - dask <=2021.4.0
     - diffpy.structure >=3
     - diffsims >=0.4
     - hyperspy-base >=1.5.2
