@@ -17,9 +17,9 @@ build:
 requirements:
   host:
     - pip
-    - python >=3,<3.9
+    - python >=3
   run:
-    - python >=3,<3.9
+    - python >=3
     - dask
     - diffpy.structure >=3
     - diffsims >=0.4
