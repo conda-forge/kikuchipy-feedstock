@@ -20,18 +20,16 @@ requirements:
     - python >=3
   run:
     - python >=3
-    - dask <=2021.03.1
+    - dask >=2021.8.1
     - diffpy.structure >=3
     - diffsims >=0.4
-    - hyperspy-base >=1.5.2
+    - hyperspy-base >=1.6.4
     - h5py
-    - importlib_metadata >=3.6
     - matplotlib-base
     - numpy
     - numba
-    - orix >=0.5
+    - orix >=0.6
     - pooch
-    - psutil
     - tqdm
     - scikit-image
     - scikit-learn
@@ -58,6 +56,8 @@ test:
     - kikuchipy.signals
     - kikuchipy.simulations
     - kikuchipy.release
+    - kikuchipy._rotation
+    - kikuchipy._util
   commands:
     - pytest --pyargs kikuchipy
 
@@ -66,8 +66,8 @@ about:
   license: GPL-3.0-or-later
   license_file: LICENSE
   summary: |
-    kikuchipy is an open-source Python library for processing and analysis of
-    electron backscatter diffraction (EBSD) patterns
+    Open-source Python library for processing and analysis of electron
+    backscatter diffraction (EBSD) patterns
   doc_url: https://kikuchipy.org
   dev_url: https://github.com/pyxem/kikuchipy
 
