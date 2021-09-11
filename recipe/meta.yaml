@@ -1,5 +1,5 @@
 {% set name = "kikuchipy" %}
-{% set version = "0.5.1" %}
+{% set version = "0.5.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 371a8613fd1fb8debfab3ac95a0736bcc9a36c6c7265cecd54ee03a69d1f179b
+  sha256: 26df6d8490076528b82468e637f0e284eacc3d520e99dfd74c13352602ef3626
 
 build:
   noarch: python
