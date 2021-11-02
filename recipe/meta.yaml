@@ -23,12 +23,12 @@ requirements:
     - dask >=2021.8.1
     - diffpy.structure >=3
     - diffsims >=0.4
-    - hyperspy-base >=1.6.4
+    - hyperspy-base >=1.6.5
     - h5py
     - matplotlib-base
     - numpy
     - numba
-    - orix >=0.6
+    - orix >=0.7
     - pooch
     - tqdm
     - scikit-image
