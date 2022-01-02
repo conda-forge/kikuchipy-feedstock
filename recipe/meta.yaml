@@ -1,5 +1,5 @@
 {% set name = "kikuchipy" %}
-{% set version = "0.5.5" %}
+{% set version = "0.5.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: baecd7bc9393eec635590df485b62fdb37c174e540041ae6507ad1edc170c88a
+  sha256: f966335fcf3b7687eec0e41d824344c18e866062f0929bb880df8a63907a5bbf
 
 build:
   noarch: python
@@ -28,7 +28,7 @@ requirements:
     - matplotlib-base
     - numpy
     - numba
-    - orix >=0.7
+    - orix >=0.8
     - pooch
     - tqdm
     - scikit-image
