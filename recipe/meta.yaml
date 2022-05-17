@@ -28,7 +28,7 @@ requirements:
     - matplotlib-base
     - numpy
     - numba
-    - orix >=0.8
+    - orix >=0.9
     - pooch
     - tqdm
     - scikit-image
