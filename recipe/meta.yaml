@@ -59,6 +59,7 @@ test:
     - kikuchipy._rotation
     - kikuchipy._util
   commands:
+    - pip check
     - pytest --pyargs kikuchipy
 
 about:
@@ -66,7 +67,13 @@ about:
   license: GPL-3.0-or-later
   license_file: LICENSE
   summary: |
-    Python library for processing and analysis of electron backscatter diffraction (EBSD) patterns
+    Python library for processing and analysis of electron backscatter
+    diffraction (EBSD) patterns
+  description: |
+    kikuchipy [ki-ko-chi-pai] is an open-source Python library for processing
+    and analysis of electron backscatter diffraction (EBSD) patterns. The
+    library builds on the tools for multi-dimensional data analysis provided by
+    the HyperSpy library.
   doc_url: https://kikuchipy.org
   dev_url: https://github.com/pyxem/kikuchipy
 
