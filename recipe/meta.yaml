@@ -59,7 +59,6 @@ test:
     - kikuchipy._rotation
     - kikuchipy._util
   commands:
-    - pip check
     - pytest --pyargs kikuchipy
 
 about:
