@@ -1,5 +1,5 @@
 {% set name = "kikuchipy" %}
-{% set version = "0.5.8" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 129ef2fd0362443c8cb686fd2fa59efdb8563830a4f1fb3e950fcb2de3513336
+  sha256: 7e182bebfc6f8f0ffa1890594dfa32b7050a9425e966d1fd3b3a6bbf3196d599
 
 build:
   noarch: python
@@ -22,14 +22,15 @@ requirements:
     - python >=3
     - dask >=2021.8.1
     - diffpy.structure >=3
-    - diffsims >=0.4
-    - hyperspy-base >=1.6.5
+    - diffsims >=0.5
+    - hyperspy-base >=1.7
     - h5py
     - matplotlib-base
     - numpy
     - numba
     - orix >=0.9
     - pooch
+    - pyvista
     - tqdm
     - scikit-image
     - scikit-learn
