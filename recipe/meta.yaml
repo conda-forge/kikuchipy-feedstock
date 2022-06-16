@@ -22,14 +22,15 @@ requirements:
     - python >=3
     - dask >=2021.8.1
     - diffpy.structure >=3
-    - diffsims >=0.4
-    - hyperspy-base >=1.6.5
+    - diffsims >=0.5
+    - hyperspy-base >=1.7
     - h5py
     - matplotlib-base
     - numpy
     - numba
     - orix >=0.9
     - pooch
+    - pyvista
     - tqdm
     - scikit-image
     - scikit-learn
