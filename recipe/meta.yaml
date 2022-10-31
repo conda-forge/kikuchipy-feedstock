@@ -1,5 +1,5 @@
 {% set name = "kikuchipy" %}
-{% set version = "0.6.1" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1cf163afd7d001877fe6859af3a6c7d5f395ceece22eb3fc71bcbca2aeb30925
+  sha256: 34580e82984d9bbd105d9d62f09cad6560edb18f10e260dfb4a6fcac2a049427
 
 build:
   noarch: python
@@ -25,16 +25,20 @@ requirements:
     - diffsims >=0.5
     - hyperspy-base >=1.7
     - h5py
+    - imageio
     - matplotlib-base
     - numpy
     - numba
     - orix >=0.9
+    # TODO: Remove in next conda-forge release after 0.7.0
+    - pint <=0.19
     - pooch
+    - pyyaml
     - pyvista
-    - tqdm
     - scikit-image
     - scikit-learn
     - scipy
+    - tqdm
 
 test:
   requires:
@@ -70,10 +74,10 @@ about:
     Python library for processing and analysis of electron backscatter
     diffraction (EBSD) patterns
   description: |
-    kikuchipy [ki-ko-chi-pai] is an open-source Python library for processing
-    and analysis of electron backscatter diffraction (EBSD) patterns. The
-    library builds on the tools for multi-dimensional data analysis provided by
-    the HyperSpy library.
+    kikuchipy [ki-ko-chi-pai] is a library for processing, simulating
+    and analyzing electron backscatter diffraction (EBSD) patterns in
+    Python, built on the tools for multi-dimensional data analysis
+    provided by the HyperSpy library.
   doc_url: https://kikuchipy.org
   dev_url: https://github.com/pyxem/kikuchipy
 
