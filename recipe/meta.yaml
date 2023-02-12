@@ -47,7 +47,6 @@ test:
     - pytest-cov
   imports:
     - kikuchipy
-    - kikuchipy.crystallography
     - kikuchipy.data
     - kikuchipy.detectors
     - kikuchipy.draw
@@ -57,7 +56,6 @@ test:
     - kikuchipy.indexing
     - kikuchipy.io
     - kikuchipy.pattern
-    - kikuchipy.pattern.chunk
     - kikuchipy.projections
     - kikuchipy.signals
     - kikuchipy.simulations
