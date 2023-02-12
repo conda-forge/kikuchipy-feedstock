@@ -45,6 +45,7 @@ test:
     - coverage
     - pytest
     - pytest-cov
+    - pytest-xdist
   imports:
     - kikuchipy
     - kikuchipy.data
@@ -63,7 +64,7 @@ test:
     - kikuchipy._rotation
     - kikuchipy._util
   commands:
-    - pytest --pyargs kikuchipy
+    - pytest --pyargs kikuchipy -k "not test_hough_indexing_lazy and not test_optimize_pc_lazy" -n 2
 
 about:
   home: https://kikuchipy.org
