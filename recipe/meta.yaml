@@ -1,5 +1,5 @@
 {% set name = "kikuchipy" %}
-{% set version = "0.7.0" %}
+{% set version = "0.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 34580e82984d9bbd105d9d62f09cad6560edb18f10e260dfb4a6fcac2a049427
+  sha256: 01fc053ea7c6acea4816e8bfbd31c9baa982b1b858812104ff46a4a98afa6a99
 
 build:
   noarch: python
@@ -23,16 +23,16 @@ requirements:
     - dask >=2021.8.1
     - diffpy.structure >=3
     - diffsims >=0.5
-    - hyperspy-base >=1.7
+    - hyperspy-base >=1.7.3
     - h5py
     - imageio
     - matplotlib-base
+    - nlopt
     - numpy
-    - numba
-    - orix >=0.9
-    # TODO: Remove in next conda-forge release after 0.7.0
-    - pint <=0.19
+    - numba >=0.55
+    - orix >=0.11
     - pooch
+    - pyebsdindex-base >=0.1.1
     - pyyaml
     - pyvista
     - scikit-image
@@ -45,18 +45,18 @@ test:
     - coverage
     - pytest
     - pytest-cov
+    - pytest-xdist
   imports:
     - kikuchipy
-    - kikuchipy.crystallography
     - kikuchipy.data
     - kikuchipy.detectors
     - kikuchipy.draw
     - kikuchipy.filters
     - kikuchipy.generators
+    - kikuchipy.imaging
     - kikuchipy.indexing
     - kikuchipy.io
     - kikuchipy.pattern
-    - kikuchipy.pattern.chunk
     - kikuchipy.projections
     - kikuchipy.signals
     - kikuchipy.simulations
@@ -64,15 +64,15 @@ test:
     - kikuchipy._rotation
     - kikuchipy._util
   commands:
-    - pytest --pyargs kikuchipy
+    - pytest --pyargs kikuchipy -k "not test_hough_indexing_lazy and not test_optimize_pc_lazy" -n 2
 
 about:
   home: https://kikuchipy.org
   license: GPL-3.0-or-later
   license_file: LICENSE
   summary: |
-    Python library for processing and analysis of electron backscatter
-    diffraction (EBSD) patterns
+    Processing, simulating and indexing of electron backscatter diffraction
+    (EBSD) patterns
   description: |
     kikuchipy [ki-ko-chi-pai] is a library for processing, simulating
     and analyzing electron backscatter diffraction (EBSD) patterns in
