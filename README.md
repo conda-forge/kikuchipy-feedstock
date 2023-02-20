@@ -7,8 +7,8 @@ Package license: GPL-3.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/kikuchipy-feedstock/blob/main/LICENSE.txt)
 
-Summary: Python library for processing and analysis of electron backscatter
-diffraction (EBSD) patterns
+Summary: Processing, simulating and indexing of electron backscatter diffraction
+(EBSD) patterns
 
 
 Development: https://github.com/pyxem/kikuchipy
