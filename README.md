@@ -1,11 +1,11 @@
-About kikuchipy
-===============
+About kikuchipy-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/kikuchipy-feedstock/blob/main/LICENSE.txt)
 
 Home: https://kikuchipy.org
 
 Package license: GPL-3.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/kikuchipy-feedstock/blob/main/LICENSE.txt)
 
 Summary: Processing, simulating and indexing of electron backscatter diffraction
 (EBSD) patterns
