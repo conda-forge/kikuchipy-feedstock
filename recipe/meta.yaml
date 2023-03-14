@@ -64,7 +64,7 @@ test:
     - kikuchipy._rotation
     - kikuchipy._util
   commands:
-    - pytest --pyargs kikuchipy -k "not test_hough_indexing_lazy and not test_optimize_pc_lazy" -n 2
+    - pytest --pyargs kikuchipy -n 2
 
 about:
   home: https://kikuchipy.org
