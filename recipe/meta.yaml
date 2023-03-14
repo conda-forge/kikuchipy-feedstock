@@ -30,7 +30,7 @@ requirements:
     - nlopt
     - numpy
     - numba >=0.55
-    - orix >=0.11
+    - orix >=0.11.1
     - pooch
     - pyebsdindex-base >=0.1.1
     - pyyaml
