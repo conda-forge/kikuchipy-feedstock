@@ -1,5 +1,5 @@
 {% set name = "kikuchipy" %}
-{% set version = "0.8.3" %}
+{% set version = "0.8.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3d5dd396cbb759ff4d3731d3e85f984cad8a63ab908e7181680a370dbe75450a
+  sha256: eb800c097794e5511c2d75b0e5ae2b562e035a15e6a8acd0f111103a1102de01
 
 build:
   noarch: python
@@ -75,7 +75,7 @@ about:
     (EBSD) patterns
   description: |
     kikuchipy [ki-ko-chi-pai] is a library for processing, simulating
-    and analyzing electron backscatter diffraction (EBSD) patterns in
+    and indexing of electron backscatter diffraction (EBSD) patterns in
     Python, built on the tools for multi-dimensional data analysis
     provided by the HyperSpy library.
   doc_url: https://kikuchipy.org
