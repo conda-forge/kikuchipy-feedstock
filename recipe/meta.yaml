@@ -62,7 +62,7 @@ test:
     - kikuchipy._rotation
     - kikuchipy._util
   commands:
-    - pytest --pyargs kikuchipy -n 2 --rerun 2
+    - pytest --pyargs kikuchipy -n 2 --reruns 2
 
 about:
   home: https://kikuchipy.org
