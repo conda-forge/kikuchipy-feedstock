@@ -1,5 +1,5 @@
 {% set name = "kikuchipy" %}
-{% set version = "0.8.7" %}
+{% set version = "0.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4108baba07cd73c5133fbff44053b0621f5cbdfdf2d1c48ccbc970fcfb1f3ce3
+  sha256: f0523ac0245d59c598fbaa0c62da46e5b08de306a62a7a99d4c140cc422772be
 
 build:
   noarch: python
@@ -22,8 +22,8 @@ requirements:
     - python >=3
     - dask-core >=2021.8.1
     - diffpy.structure >=3
-    - diffsims >=0.5
-    - hyperspy-base >=1.7.3
+    - diffsims >=0.5.1
+    - hyperspy-base >=1.7.3,<2
     - h5py
     - imageio
     - matplotlib-base
@@ -32,7 +32,7 @@ requirements:
     - numba >=0.55
     - orix >=0.11.1
     - pooch
-    - pyebsdindex-base >=0.1.2
+    - pyebsdindex-base ~=0.2
     - pyyaml
     - scikit-image
     - scikit-learn
@@ -45,25 +45,24 @@ test:
     - pytest
     - pytest-cov
     - pytest-xdist
+    - pytest-rerunfailures
   imports:
     - kikuchipy
     - kikuchipy.data
     - kikuchipy.detectors
     - kikuchipy.draw
     - kikuchipy.filters
-    - kikuchipy.generators
     - kikuchipy.imaging
     - kikuchipy.indexing
     - kikuchipy.io
     - kikuchipy.pattern
-    - kikuchipy.projections
     - kikuchipy.signals
     - kikuchipy.simulations
     - kikuchipy.release
     - kikuchipy._rotation
     - kikuchipy._util
   commands:
-    - pytest --pyargs kikuchipy -n 2
+    - pytest --pyargs kikuchipy -n 2 --reruns 2
 
 about:
   home: https://kikuchipy.org
