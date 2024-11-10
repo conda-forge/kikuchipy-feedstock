@@ -1,5 +1,6 @@
 {% set name = "kikuchipy" %}
 {% set version = "0.11.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -16,10 +17,11 @@ build:
 
 requirements:
   host:
+    - python {{ python_min }}
     - hatchling
     - pip
-    - python >=3.10
   run:
+    - python >={{ python_min }}
     - dask-core >=2021.8.1
     - diffpy.structure >=3
     - diffsims >=0.5.2
@@ -33,7 +35,6 @@ requirements:
     - orix-base
     - pooch
     - pyebsdindex-base >=0.2,!=0.3.0,!=0.3.1
-    - python >=3.10
     - pyyaml
     - rosettasciio
     - scikit-image
@@ -43,6 +44,7 @@ requirements:
 
 test:
   requires:
+    - python {{ python_min }}
     - coverage
     - pytest
     - pytest-cov
@@ -61,7 +63,7 @@ test:
     - kikuchipy.signals
     - kikuchipy.simulations
   commands:
-    - pytest --pyargs kikuchipy -n 2 --reruns 2
+    - pytest -n 2 --reruns 2
     - pip check
 
 about:
