@@ -50,6 +50,8 @@ test:
     - pytest-cov
     - pytest-xdist
     - pytest-rerunfailures
+  source_files:
+    - tests
   imports:
     - kikuchipy
     - kikuchipy.data
@@ -63,7 +65,7 @@ test:
     - kikuchipy.signals
     - kikuchipy.simulations
   commands:
-    - pytest -n 2 --reruns 2
+    - pytest --pyargs kikuchipy -n 2 --reruns 2
     - pip check
 
 about:
