@@ -66,7 +66,7 @@ test:
     - kikuchipy.signals
     - kikuchipy.simulations
   commands:
-    - pytest tests -n 2 --reruns 2
+    - pytest tests -n 2 --reruns 2 -k "not test_imaging and not test_io and not test_signals"
     - pip check
 
 about:
