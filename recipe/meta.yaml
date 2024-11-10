@@ -65,7 +65,7 @@ test:
     - kikuchipy.signals
     - kikuchipy.simulations
   commands:
-    - pytest --pyargs kikuchipy -n 2 --reruns 2
+    - pytest tests -n 2 --reruns 2
     - pip check
 
 about:
