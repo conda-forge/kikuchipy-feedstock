@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: ae5a41745f93b12321f9c88fbaf6512a5eae46c6e45ea95a48ecbb1525c81703
 
 build:
@@ -16,24 +16,26 @@ build:
 
 requirements:
   host:
+    - hatchling
     - pip
-    - python >=3
+    - python >=3.10
   run:
-    - python >=3
     - dask-core >=2021.8.1
     - diffpy.structure >=3
     - diffsims >=0.5.2
-    - hyperspy-base >=1.7.3,<2
+    - hyperspy-base >=2.2
     - h5py
     - imageio
     - matplotlib-base
     - nlopt
     - numpy
     - numba >=0.57
-    - orix >=0.12.1
+    - orix-base
     - pooch
     - pyebsdindex-base >=0.2,!=0.3.0,!=0.3.1
+    - python >=3.10
     - pyyaml
+    - rosettasciio
     - scikit-image
     - scikit-learn
     - scipy
@@ -58,24 +60,21 @@ test:
     - kikuchipy.pattern
     - kikuchipy.signals
     - kikuchipy.simulations
-    - kikuchipy.release
-    - kikuchipy._rotation
-    - kikuchipy._util
   commands:
     - pytest --pyargs kikuchipy -n 2 --reruns 2
+    - pip check
 
 about:
   home: https://kikuchipy.org
   license: GPL-3.0-or-later
   license_file: LICENSE
   summary: |
-    Processing, simulating and indexing of electron backscatter diffraction
-    (EBSD) patterns
+    Processing, simulating, and indexing of electron backscatter diffraction (EBSD)
+    patterns
   description: |
-    kikuchipy [ki-ko-chi-pai] is a library for processing, simulating
-    and indexing of electron backscatter diffraction (EBSD) patterns in
-    Python, built on the tools for multi-dimensional data analysis
-    provided by the HyperSpy library.
+    kikuchipy is a library for processing, simulating, and indexing of electron
+    backscatter diffraction (EBSD) patterns in Python, built on the tools for
+    multi-dimensional data analysis provided by the HyperSpy library.
   doc_url: https://kikuchipy.org
   dev_url: https://github.com/pyxem/kikuchipy
 
