@@ -50,9 +50,6 @@ test:
     - pytest-cov
     - pytest-xdist
     - pytest-rerunfailures
-  source_files:
-    - tests
-    - conftest.py
   imports:
     - kikuchipy
     - kikuchipy.data
