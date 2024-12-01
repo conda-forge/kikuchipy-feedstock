@@ -7,18 +7,17 @@ Home: https://kikuchipy.org
 
 Package license: GPL-3.0-or-later
 
-Summary: Processing, simulating and indexing of electron backscatter diffraction
-(EBSD) patterns
+Summary: Processing, simulating, and indexing of electron backscatter diffraction (EBSD)
+patterns
 
 
 Development: https://github.com/pyxem/kikuchipy
 
 Documentation: https://kikuchipy.org
 
-kikuchipy [ki-ko-chi-pai] is a library for processing, simulating
-and indexing of electron backscatter diffraction (EBSD) patterns in
-Python, built on the tools for multi-dimensional data analysis
-provided by the HyperSpy library.
+kikuchipy is a library for processing, simulating, and indexing of electron
+backscatter diffraction (EBSD) patterns in Python, built on the tools for
+multi-dimensional data analysis provided by the HyperSpy library.
 
 
 Current build status
