@@ -37,7 +37,7 @@ requirements:
     - pyebsdindex-base >=0.2,!=0.3.0,!=0.3.1
     - pyvista
     - pyyaml
-    - rosettasciio
+    - rosettasciio-base
     - scikit-image
     - scikit-learn
     - scipy
