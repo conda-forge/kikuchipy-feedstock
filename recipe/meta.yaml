@@ -1,5 +1,5 @@
 {% set name = "kikuchipy" %}
-{% set version = "0.11.1.post0" %}
+{% set version = "0.11.2" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6008c5892a6927f7b0a04e1e0a30fde3855817ebb6cdffb5a49cfda553c7294b
+  sha256: fdbc9e7c64895d77468ce7273461799eff81273115e27b4086e125a4cdfacb6c
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
 
 requirements:
@@ -37,7 +37,7 @@ requirements:
     - pyebsdindex-base >=0.2,!=0.3.0,!=0.3.1
     - pyvista
     - pyyaml
-    - rosettasciio-base
+    - rosettasciio-base >=0.3.0
     - scikit-image
     - scikit-learn
     - scipy
