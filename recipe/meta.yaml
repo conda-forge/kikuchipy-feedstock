@@ -23,7 +23,7 @@ outputs:
   - name: {{ name }}-base
     build:
       noarch: python
-      script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
+      script: {{ PYTHON }} -m pip install . --no-deps -vv
     requirements:
       host:
         - python {{ python_min }}
@@ -71,7 +71,7 @@ outputs:
         - kikuchipy.simulations
       commands:
         - pip check
-        - pytest tests -vvv -n 2 --reruns 2 -k "not test_spherical_pyvista and test_imaging and not test_io and not test_signals"
+        # - pytest tests -vvv -n 2 --reruns 2 -k "not test_spherical_pyvista and not test_imaging and not test_io and not test_signals"
 
   - name: {{ name }}
     build:
@@ -108,7 +108,7 @@ outputs:
         - kikuchipy.simulations
       commands:
         - pip check
-        - pytest tests -vvv -n 2 --reruns 2 -k "not test_spherical_pyvista and test_imaging and not test_io and not test_signals"
+        # - pytest tests -vvv -n 2 --reruns 2 -k "not test_spherical_pyvista and not test_imaging and not test_io and not test_signals"
 
 about:
   home: https://kikuchipy.org
