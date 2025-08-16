@@ -3,72 +3,81 @@
 {% set python_min = "3.10" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}-meta
   version: {{ version }}
 
 source:
+  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: fdbc9e7c64895d77468ce7273461799eff81273115e27b4086e125a4cdfacb6c
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
 
-requirements:
-  host:
-    - python {{ python_min }}
-    - hatchling
-    - pip
-  run:
-    - python >={{ python_min }}
-    - dask-core >=2021.8.1
-    - diffpy.structure >=3
-    - diffsims >=0.5.2
-    - hyperspy-base >=2.2
-    - h5py
-    - imageio
-    - matplotlib-base
-    - nlopt
-    - numpy
-    - numba >=0.57
-    - orix-base
-    - pooch
-    - pyebsdindex-base >=0.2,!=0.3.0,!=0.3.1
-    - pyvista
-    - pyyaml
-    - rosettasciio-base >=0.3.0
-    - scikit-image
-    - scikit-learn
-    - scipy
-    - tqdm
+outputs:
+  - name: {{ name }}-base
+    requirements:
+      host:
+        - python {{ python_min }}
+        - hatchling
+        - pip
+      run:
+        - python >={{ python_min }}
+        - dask-core >=2021.8.1
+        - diffpy.structure >=3
+        - diffsims >=0.5.2
+        - hyperspy-base >=2.2
+        - h5py >=2.10
+        - imageio
+        - matplotlib-base >=3.5
+        - numpy >=1.23.0
+        - numba >=0.57
+        - orix-base >=0.12.1
+        - pooch >=1.3.0
+        - pyyaml
+        - rosettasciio-base >=0.3.0
+        - scikit-image >=0.16.2
+        - scikit-learn
+        - scipy >=1.7
+        - tqdm >=0.5.2
+    test:
+      requires:
+        - python {{ python_min }}
+        - coverage
+        - pytest
+        - pytest-cov
+        - pytest-xdist
+        - pytest-rerunfailures
+      source_files:
+        - tests
+        - conftest.py
+      imports:
+        - kikuchipy
+        - kikuchipy.data
+        - kikuchipy.detectors
+        - kikuchipy.draw
+        - kikuchipy.filters
+        - kikuchipy.imaging
+        - kikuchipy.indexing
+        - kikuchipy.io
+        - kikuchipy.pattern
+        - kikuchipy.signals
+        - kikuchipy.simulations
+      commands:
+        - pip check
+        - pytest tests -n 2 --reruns 2 -k "not test_spherical_pyvista and test_imaging and not test_io and not test_signals"
 
-test:
-  requires:
-    - python {{ python_min }}
-    - coverage
-    - pytest
-    - pytest-cov
-    - pytest-xdist
-    - pytest-rerunfailures
-  source_files:
-    - tests
-    - conftest.py
-  imports:
-    - kikuchipy
-    - kikuchipy.data
-    - kikuchipy.detectors
-    - kikuchipy.draw
-    - kikuchipy.filters
-    - kikuchipy.imaging
-    - kikuchipy.indexing
-    - kikuchipy.io
-    - kikuchipy.pattern
-    - kikuchipy.signals
-    - kikuchipy.simulations
-  commands:
-    - pytest tests -n 2 --reruns 2 -k "not test_spherical_pyvista and test_imaging and not test_io and not test_signals"
-    - pip check
+  - name: {{ name }}
+    requirements:
+      host:
+        - python {{ python_min }}
+      run:
+        - {{ pin_subpackage('kikuchipy-base', exact=True) }}
+        - nlopt
+        - pyebsdindex-base >=0.2,!=0.3.0,!=0.3.1
+        - pyvista
 
 about:
   home: https://kikuchipy.org
