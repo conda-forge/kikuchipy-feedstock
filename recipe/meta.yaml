@@ -51,12 +51,13 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - pip
         - pytest
         - pytest-xdist
         - pytest-rerunfailures
-      source_files:
-        - tests
-        - conftest.py
+      # source_files:
+      #   - tests
+      #   - conftest.py
       imports:
         - kikuchipy
         - kikuchipy.data
@@ -88,12 +89,13 @@ outputs:
     test:
       requires:
         - python {{ python_min }}
+        - pip
         - pytest
         - pytest-xdist
         - pytest-rerunfailures
-      source_files:
-        - tests
-        - conftest.py
+      # source_files:
+      #   - tests
+      #   - conftest.py
       imports:
         - kikuchipy
         - kikuchipy.data
