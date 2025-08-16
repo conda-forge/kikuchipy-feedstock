@@ -12,12 +12,13 @@ source:
   sha256: fdbc9e7c64895d77468ce7273461799eff81273115e27b4086e125a4cdfacb6c
 
 build:
-  noarch: python
   number: 1
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
 
 outputs:
   - name: {{ name }}-base
+    build:
+      noarch: python
+      script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
     requirements:
       host:
         - python {{ python_min }}
@@ -70,6 +71,8 @@ outputs:
         - pytest tests -n 2 --reruns 2 -k "not test_spherical_pyvista and test_imaging and not test_io and not test_signals"
 
   - name: {{ name }}
+    build:
+      noarch: python
     requirements:
       host:
         - python {{ python_min }}
@@ -78,6 +81,32 @@ outputs:
         - nlopt
         - pyebsdindex-base >=0.2,!=0.3.0,!=0.3.1
         - pyvista
+    test:
+      requires:
+        - python {{ python_min }}
+        - coverage
+        - pytest
+        - pytest-cov
+        - pytest-xdist
+        - pytest-rerunfailures
+      source_files:
+        - tests
+        - conftest.py
+      imports:
+        - kikuchipy
+        - kikuchipy.data
+        - kikuchipy.detectors
+        - kikuchipy.draw
+        - kikuchipy.filters
+        - kikuchipy.imaging
+        - kikuchipy.indexing
+        - kikuchipy.io
+        - kikuchipy.pattern
+        - kikuchipy.signals
+        - kikuchipy.simulations
+      commands:
+        - pip check
+        - pytest tests -n 2 --reruns 2 -k "not test_spherical_pyvista and test_imaging and not test_io and not test_signals"
 
 about:
   home: https://kikuchipy.org
