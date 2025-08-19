@@ -1,5 +1,5 @@
-About kikuchipy-feedstock
-=========================
+About kikuchipy-meta-feedstock
+==============================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/kikuchipy-feedstock/blob/main/LICENSE.txt)
 
@@ -39,27 +39,28 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-kikuchipy-green.svg)](https://anaconda.org/conda-forge/kikuchipy) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/kikuchipy.svg)](https://anaconda.org/conda-forge/kikuchipy) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/kikuchipy.svg)](https://anaconda.org/conda-forge/kikuchipy) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/kikuchipy.svg)](https://anaconda.org/conda-forge/kikuchipy) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-kikuchipy--base-green.svg)](https://anaconda.org/conda-forge/kikuchipy-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/kikuchipy-base.svg)](https://anaconda.org/conda-forge/kikuchipy-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/kikuchipy-base.svg)](https://anaconda.org/conda-forge/kikuchipy-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/kikuchipy-base.svg)](https://anaconda.org/conda-forge/kikuchipy-base) |
 
-Installing kikuchipy
-====================
+Installing kikuchipy-meta
+=========================
 
-Installing `kikuchipy` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `kikuchipy-meta` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `kikuchipy` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `kikuchipy, kikuchipy-base` can be installed with `conda`:
 
 ```
-conda install kikuchipy
+conda install kikuchipy kikuchipy-base
 ```
 
 or with `mamba`:
 
 ```
-mamba install kikuchipy
+mamba install kikuchipy kikuchipy-base
 ```
 
 It is possible to list all of the versions of `kikuchipy` available on your platform with `conda`:
@@ -129,17 +130,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating kikuchipy-feedstock
-============================
+Updating kikuchipy-meta-feedstock
+=================================
 
-If you would like to improve the kikuchipy recipe or build a new
+If you would like to improve the kikuchipy-meta recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/kikuchipy-feedstock are
+Note that all branches in the conda-forge/kikuchipy-meta-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
