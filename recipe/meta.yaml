@@ -50,6 +50,8 @@ outputs:
         - scikit-learn
         - scipy >=1.7
         - tqdm >=0.5.2
+        # TODO: Remove once Python >= 3.11
+        - typing-extensions
     test:
       # Test suite is run in package with all optional requirements
       requires:
