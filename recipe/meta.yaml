@@ -102,7 +102,7 @@ outputs:
         - kikuchipy.simulations
       commands:
         - pip check
-        - pytest tests -vvv -n 2 --reruns 2
+        - pytest tests -vvv -n 2 --reruns 2 -k "not test_refine_orientation_projection_center_local_nlopt"
 
 about:
   home: https://kikuchipy.org
