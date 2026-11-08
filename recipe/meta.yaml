@@ -1,5 +1,5 @@
 {% set name = "kikuchipy" %}
-{% set version = "0.13.1" %}
+{% set version = "0.14.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -9,7 +9,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e5dc1e1ae15b4619110bee4a3ccc74c0a1da825015eb33bef73dcea6bad95ea4
+  sha256: 759c2a2f1f1aa1cc899996d8df45d7f2f37e78b0c544d2b4352440d5695c25a4
 
 build:
   number: 0
@@ -39,9 +39,9 @@ outputs:
         - imageio
         - lazy_loader
         - matplotlib-base >=3.6
-        - numba >=0.57
-        - numpy >=1.23.0
-        - orix-base >=0.12.1
+        - numba >=0.58
+        - numpy >=1.25.0
+        - orix-base >=0.15.0
         - packaging
         - pyyaml
         - rosettasciio-base >=0.3.0
@@ -71,6 +71,10 @@ outputs:
       run:
         - {{ pin_subpackage('kikuchipy-base', exact=True) }}
         - python >={{ python_min }}
+        - bayesian-optimization >=3.0
+        # TODO: Uncomment once ebsdsim is available from conda-forge,
+        # https://github.com/ZacharyVarley/ebsdsim/issues/5
+        # - ebsdsim >=0.1.4
         - ipywidgets
         - IPython
         - nlopt
@@ -102,7 +106,7 @@ outputs:
         - kikuchipy.simulations
       commands:
         - pip check
-        - pytest tests -vvv -n 2 --reruns 2 -k "not test_refine_orientation_projection_center_local_nlopt"
+        - pytest tests -vvv -n 2 --reruns 2
 
 about:
   home: https://kikuchipy.org
@@ -112,8 +116,8 @@ about:
     Processing, simulating, and indexing of electron backscatter diffraction (EBSD)
     patterns
   description: |
-    kikuchipy is a library for processing, simulation, and indexing of electron
-    backscatter diffraction (EBSD) patterns in Python, built on the tools for
+    kikuchipy is a library for processing, simulating, and indexing of electron
+    backscatter diffraction (EBSD) patterns in Python. It is built on the tools for
     multi-dimensional data analysis provided by the HyperSpy library.
   doc_url: https://kikuchipy.org
   dev_url: https://github.com/pyxem/kikuchipy
