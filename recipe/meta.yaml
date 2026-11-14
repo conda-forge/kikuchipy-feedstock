@@ -1,5 +1,5 @@
 {% set name = "kikuchipy" %}
-{% set version = "0.14.1" %}
+{% set version = "0.14.2" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -9,7 +9,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6b35b8929e4738622b7d066619e521bcd1c7d837ad43b2ad2d4260aecd835bdf
+  sha256: d597fa2a850e92c33b9270be417af1d09829b92b8960cb932978226028bd0c01
 
 build:
   number: 0
